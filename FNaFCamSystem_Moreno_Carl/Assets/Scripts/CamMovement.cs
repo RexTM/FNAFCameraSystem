@@ -10,7 +10,7 @@ public class CamMovement : MonoBehaviour
     public bool ADKeys, movingLeft, movingRight;
     public int targetFramerate;
 
-    //Creates the frame rate
+    //Creates the frame rate for the camera
     void Start()
     {
         Application.targetFrameRate = targetFramerate;
@@ -18,7 +18,7 @@ public class CamMovement : MonoBehaviour
 
     void Update()
     {
-        //If ADKeys is == true, you may rotate the camera left and right with A & D.
+        //If ADKeys is equal to true, you may rotate the camera left and right with A & D.
         if (ADKeys == true)
         {
             //When you press the A key, the camera will rotate left.
@@ -46,10 +46,9 @@ public class CamMovement : MonoBehaviour
                 }
             }
         }
-        //If ADKeys == false, the regular camera rotation will be available.
+        //If ADKeys is equal to false, then the regular camera rotation will be available for the player
         if (ADKeys == false)
         {
-            //If either movingLeft or movingRight is == true, the camera will rotate left or right.
             if (movingLeft == true)
             {
                 if (playerCam.localRotation == Quaternion.Euler(0, -clampValue, 0))
